@@ -1,0 +1,246 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foundry.lakatos.example/schema/theory-object/v0",
+  "title": "Foundry Theory Object (DRAFT v0)",
+  "description": "DRAFT v0, 10 October 2026. Not yet implemented. An inferential-role representation of a theory: constructs are positions in a web of material inferential relations (commitments, entitlements, licensed inferences, incompatibilities), not names for latent essences. Serialized as JSON-LD using context.v0.jsonld. Every identified node can be referenced by Provenance Ledger events. Field names and enumerations will change during Stage 1.",
+  "type": "object",
+  "required": ["@context", "@id", "@type", "label", "schemaVersion", "constructs", "relations", "assumptions", "propositions"],
+  "properties": {
+    "@context": { "description": "Must reference the Foundry v0 context.", "type": ["string", "object", "array"] },
+    "@id": { "$ref": "#/$defs/iri" },
+    "@type": { "const": "TheoryObject" },
+    "schemaVersion": { "const": "0.1-draft" },
+    "label": { "type": "string" },
+    "tradition": { "description": "Research programme the theory belongs to, e.g. transaction-cost economics.", "type": "string" },
+    "sources": { "type": "array", "items": { "$ref": "#/$defs/SourceRef" } },
+    "readingOf": { "description": "When this object is one member of a formalization ensemble: the ensemble's @id.", "$ref": "#/$defs/iri" },
+    "stanceProfile": { "$ref": "#/$defs/StanceProfile" },
+    "scopeConditions": { "type": "array", "items": { "$ref": "#/$defs/ScopeCondition" } },
+    "constructs": { "type": "array", "items": { "$ref": "#/$defs/Construct" } },
+    "relations": { "type": "array", "items": { "$ref": "#/$defs/Relation" } },
+    "mechanisms": { "type": "array", "items": { "$ref": "#/$defs/Mechanism" } },
+    "assumptions": { "type": "array", "items": { "$ref": "#/$defs/Assumption" } },
+    "propositions": { "type": "array", "items": { "$ref": "#/$defs/Proposition" } },
+    "derivations": { "type": "array", "items": { "$ref": "#/$defs/Derivation" } },
+    "models": { "type": "array", "items": { "$ref": "#/$defs/ExecutableModel" } },
+    "openQuestions": { "description": "Points the producing agent could not settle and returned to the human theorist.", "type": "array", "items": { "type": "string" } },
+    "provenance": { "$ref": "#/$defs/ProvenanceStamp" }
+  },
+  "$defs": {
+    "iri": { "type": "string", "description": "Compact IRI or local id, e.g. 'tce:C1'." },
+    "SourceRef": {
+      "type": "object",
+      "required": ["citation"],
+      "properties": {
+        "citation": { "type": "string" },
+        "span": { "description": "Quoted or located passage this node was read from.", "type": "string" }
+      }
+    },
+    "StanceProfile": {
+      "description": "Tags from the Project Lakatos discourse grammar (Appendix A, Table 3).",
+      "type": "object",
+      "properties": {
+        "epistemologicalStance": { "enum": ["positivism-strict", "positivism-lay", "realism-metaphysical", "realism-language-dependent", "instrumentalism", "constructivism", "pragmatism", "mixed", "undetermined"] },
+        "corroborationLogic": { "enum": ["inductivism-bayesian", "inductivism-frequentist", "falsificationism-dogmatic", "falsificationism-naive", "falsificationism-methodological", "falsificationism-sophisticated", "mixed", "undetermined"] },
+        "ontologicalCommitments": { "type": "array", "items": { "type": "string" } },
+        "modelClasses": { "type": "array", "items": { "enum": ["causal", "teleological", "functional", "structural", "dynamical", "relational"] } },
+        "explanatoryNorms": { "type": "array", "items": { "enum": ["depth", "coverage-parsimony"] } },
+        "justificationStrategies": { "type": "array", "items": { "enum": ["reductive", "eliminative", "assimilative"] } },
+        "inferenceNorms": { "type": "array", "items": { "enum": ["deductive", "inductive", "abductive"] } },
+        "evidence": { "description": "Why these tags were assigned.", "type": "string" }
+      }
+    },
+    "ScopeCondition": {
+      "type": "object",
+      "required": ["@id", "statement"],
+      "properties": {
+        "@id": { "$ref": "#/$defs/iri" },
+        "statement": { "type": "string" },
+        "explicitness": { "enum": ["explicit", "implicit", "surfaced"] }
+      }
+    },
+    "InferentialRole": {
+      "description": "Brandomian inferential role of a construct. Each entry is a statement-level inference, written as a short conditional, optionally pointing to propositions or other constructs.",
+      "type": "object",
+      "required": ["commitments", "entitlements", "licenses", "precludes"],
+      "properties": {
+        "commitments": { "description": "What asserting that the construct applies commits the theorist to.", "type": "array", "items": { "$ref": "#/$defs/Inference" } },
+        "entitlements": { "description": "What would entitle a theorist to assert that the construct applies (its evidential or circumstantial conditions).", "type": "array", "items": { "$ref": "#/$defs/Inference" } },
+        "licenses": { "description": "Downstream inferences others may draw once it is asserted.", "type": "array", "items": { "$ref": "#/$defs/Inference" } },
+        "precludes": { "description": "Claims incompatible with asserting it.", "type": "array", "items": { "$ref": "#/$defs/Inference" } }
+      }
+    },
+    "Inference": {
+      "type": "object",
+      "required": ["@id", "statement"],
+      "properties": {
+        "@id": { "$ref": "#/$defs/iri" },
+        "statement": { "type": "string" },
+        "refs": { "type": "array", "items": { "$ref": "#/$defs/iri" } },
+        "strength": { "enum": ["strict", "defeasible"] }
+      }
+    },
+    "MeasurementCommitment": {
+      "type": "object",
+      "required": ["indicator"],
+      "properties": {
+        "indicator": { "type": "string" },
+        "level": { "enum": ["nominal", "ordinal", "interval", "ratio", "latent"] },
+        "method": { "type": "string" },
+        "unitOfAnalysis": { "type": "string" }
+      }
+    },
+    "Construct": {
+      "type": "object",
+      "required": ["@id", "label", "constructType", "inferentialRole"],
+      "properties": {
+        "@id": { "$ref": "#/$defs/iri" },
+        "label": { "type": "string" },
+        "definition": { "type": "string" },
+        "constructType": { "enum": ["entity", "attribute", "state", "process", "event", "disposition", "relation"] },
+        "level": { "enum": ["individual", "dyad", "transaction", "organization", "population", "field", "multi-level"] },
+        "measurementCommitments": { "type": "array", "items": { "$ref": "#/$defs/MeasurementCommitment" } },
+        "inferentialRole": { "$ref": "#/$defs/InferentialRole" },
+        "alternativeRoles": { "description": "Rival inferential-role assignments where the prose underdetermines one; each is a full InferentialRole with a label.", "type": "array", "items": { "allOf": [{ "$ref": "#/$defs/InferentialRole" }, { "type": "object", "properties": { "readingLabel": { "type": "string" } } }] } },
+        "source": { "$ref": "#/$defs/SourceRef" }
+      }
+    },
+    "Relation": {
+      "type": "object",
+      "required": ["@id", "from", "to", "form"],
+      "properties": {
+        "@id": { "$ref": "#/$defs/iri" },
+        "from": { "$ref": "#/$defs/iri" },
+        "to": { "$ref": "#/$defs/iri" },
+        "form": { "enum": ["causal", "teleological", "functional", "constitutive", "selection"] },
+        "sign": { "enum": ["positive", "negative", "non-monotone", "conditional", "unspecified"] },
+        "moderators": { "type": "array", "items": { "$ref": "#/$defs/iri" } },
+        "scope": { "type": "array", "items": { "$ref": "#/$defs/iri" } }
+      }
+    },
+    "Mechanism": {
+      "type": "object",
+      "required": ["@id", "label", "steps"],
+      "properties": {
+        "@id": { "$ref": "#/$defs/iri" },
+        "label": { "type": "string" },
+        "steps": { "description": "Ordered relation ids composing the mechanism.", "type": "array", "items": { "$ref": "#/$defs/iri" } },
+        "mechanismType": { "enum": ["cognitive", "strategic", "economic", "political", "social-structural", "selection", "institutional"] }
+      }
+    },
+    "Assumption": {
+      "type": "object",
+      "required": ["@id", "statement", "status"],
+      "properties": {
+        "@id": { "$ref": "#/$defs/iri" },
+        "statement": { "type": "string" },
+        "status": { "description": "Core = Lakatosian hard core; auxiliary = protective belt.", "enum": ["core", "auxiliary"] },
+        "explicitness": { "enum": ["explicit", "implicit", "surfaced"] },
+        "surfacedBy": { "description": "Agent role or derivation that surfaced an implicit assumption.", "type": "string" },
+        "supports": { "type": "array", "items": { "$ref": "#/$defs/iri" } }
+      }
+    },
+    "Proposition": {
+      "type": "object",
+      "required": ["@id", "statement"],
+      "properties": {
+        "@id": { "$ref": "#/$defs/iri" },
+        "statement": { "type": "string" },
+        "claimType": { "enum": ["prediction", "explanation", "prescription", "definition"] },
+        "factStatus": { "description": "Lakatos (1970): does the theory predict this as a novel fact, or accommodate a known one?", "enum": ["novel", "accommodation", "undetermined"] },
+        "observables": { "type": "array", "items": { "type": "string" } },
+        "rivalDivergence": { "description": "Rival theory objects that predict otherwise, with their contrary prediction.", "type": "array", "items": { "type": "object", "properties": { "rival": { "$ref": "#/$defs/iri" }, "contrary": { "type": "string" } } } }
+      }
+    },
+    "Derivation": {
+      "type": "object",
+      "required": ["@id", "target", "premises", "method", "status"],
+      "properties": {
+        "@id": { "$ref": "#/$defs/iri" },
+        "target": { "$ref": "#/$defs/iri" },
+        "premises": { "type": "array", "items": { "$ref": "#/$defs/iri" } },
+        "method": { "enum": ["verbal", "symbolic", "simulation", "game-theoretic"] },
+        "status": { "description": "'asserted' = claimed in prose only; 'closed' = verified by a checker; 'open' = fails without further assumptions.", "enum": ["asserted", "closed", "open", "refuted"] },
+        "auxiliariesRequired": { "type": "array", "items": { "$ref": "#/$defs/iri" } },
+        "checker": { "description": "Symbolic or simulation backend that disposed the derivation; empty for 'asserted'.", "type": "string" },
+        "notes": { "type": "string" }
+      }
+    },
+    "ExecutableModel": {
+      "type": "object",
+      "required": ["@id", "modelClass"],
+      "properties": {
+        "@id": { "$ref": "#/$defs/iri" },
+        "modelClass": { "enum": ["agent-based", "structural", "game-theoretic", "system-dynamics", "analytical"] },
+        "artifact": { "description": "Path or hash of the code or formal specification.", "type": "string" },
+        "mapsConstructs": { "type": "array", "items": { "type": "object", "properties": { "construct": { "$ref": "#/$defs/iri" }, "parameterOrVariable": { "type": "string" } } } }
+      }
+    },
+    "ProvenanceStamp": {
+      "type": "object",
+      "properties": {
+        "createdBy": { "type": "string" },
+        "ledgerEvents": { "type": "array", "items": { "$ref": "#/$defs/iri" } }
+      }
+    },
+
+    "FormalizationEnsemble": {
+      "description": "Explicator output when prose underdetermines a reading: several theory objects plus their dispersion.",
+      "type": "object",
+      "required": ["@id", "@type", "members"],
+      "properties": {
+        "@id": { "$ref": "#/$defs/iri" },
+        "@type": { "const": "FormalizationEnsemble" },
+        "members": { "type": "array", "items": { "$ref": "#/$defs/iri" } },
+        "pivotalDifferences": { "type": "array", "items": { "type": "string" } },
+        "dispersion": { "type": "number", "minimum": 0, "maximum": 1 },
+        "adoptedReading": { "description": "Set only by a human decision recorded in the Ledger.", "$ref": "#/$defs/iri" }
+      }
+    },
+    "AlignmentMap": {
+      "description": "Integrator output relating two or more theory objects.",
+      "type": "object",
+      "required": ["@id", "@type", "theories", "links"],
+      "properties": {
+        "@id": { "$ref": "#/$defs/iri" },
+        "@type": { "const": "AlignmentMap" },
+        "theories": { "type": "array", "items": { "$ref": "#/$defs/iri" }, "minItems": 2 },
+        "links": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["kind", "constructs", "basis"],
+            "properties": {
+              "kind": { "enum": ["bridge", "rivalry", "complementarity", "equivocation"] },
+              "constructs": { "type": "array", "items": { "$ref": "#/$defs/iri" } },
+              "sharedLicenses": { "type": "array", "items": { "type": "string" } },
+              "conflictingEntitlements": { "type": "array", "items": { "type": "string" } },
+              "discharges": { "description": "For complementarity: which open assumption of one theory the other's commitment discharges.", "type": "string" },
+              "basis": { "type": "string" },
+              "operator": { "enum": ["Integrate", "Augment", "Reduce", "Assimilate", "Eliminate"] },
+              "inferentialPrice": { "description": "What the integration gives up or must newly assume.", "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "LedgerEvent": {
+      "description": "One append-only Provenance Ledger entry. Events are hash-chained.",
+      "type": "object",
+      "required": ["@id", "@type", "timestamp", "actor", "action", "prevHash", "hash"],
+      "properties": {
+        "@id": { "$ref": "#/$defs/iri" },
+        "@type": { "const": "LedgerEvent" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "actor": { "type": "object", "required": ["kind", "name"], "properties": { "kind": { "enum": ["human", "agent", "checker"] }, "name": { "type": "string" }, "modelVersion": { "type": "string" }, "instructionSetVersion": { "type": "string" } } },
+        "action": { "enum": ["ingest", "propose", "accept", "reject", "modify", "derive", "challenge", "align", "design", "annotate"] },
+        "inputs": { "type": "array", "items": { "$ref": "#/$defs/iri" } },
+        "outputs": { "type": "array", "items": { "$ref": "#/$defs/iri" } },
+        "respondsTo": { "$ref": "#/$defs/iri" },
+        "rationale": { "type": "string" },
+        "prevHash": { "type": "string" },
+        "hash": { "type": "string" }
+      }
+    }
+  }
+}

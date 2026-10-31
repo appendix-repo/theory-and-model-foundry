@@ -1,0 +1,30 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@vocab": "https://foundry.lakatos.example/vocab/v0#",
+    "fdy": "https://foundry.lakatos.example/vocab/v0#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "TheoryObject": "fdy:TheoryObject",
+    "FormalizationEnsemble": "fdy:FormalizationEnsemble",
+    "AlignmentMap": "fdy:AlignmentMap",
+    "LedgerEvent": { "@id": "fdy:LedgerEvent" },
+    "from": { "@id": "fdy:from", "@type": "@id" },
+    "to": { "@id": "fdy:to", "@type": "@id" },
+    "refs": { "@id": "fdy:refs", "@type": "@id", "@container": "@set" },
+    "moderators": { "@id": "fdy:moderators", "@type": "@id", "@container": "@set" },
+    "steps": { "@id": "fdy:steps", "@type": "@id", "@container": "@list" },
+    "supports": { "@id": "fdy:supports", "@type": "@id", "@container": "@set" },
+    "premises": { "@id": "fdy:premises", "@type": "@id", "@container": "@set" },
+    "target": { "@id": "fdy:target", "@type": "@id" },
+    "auxiliariesRequired": { "@id": "fdy:auxiliariesRequired", "@type": "@id", "@container": "@set" },
+    "members": { "@id": "fdy:members", "@type": "@id", "@container": "@set" },
+    "readingOf": { "@id": "fdy:readingOf", "@type": "@id" },
+    "theories": { "@id": "fdy:theories", "@type": "@id", "@container": "@set" },
+    "inputs": { "@id": "prov:used", "@type": "@id", "@container": "@set" },
+    "outputs": { "@id": "prov:generated", "@type": "@id", "@container": "@set" },
+    "respondsTo": { "@id": "prov:wasInformedBy", "@type": "@id" },
+    "timestamp": { "@id": "prov:atTime", "@type": "xsd:dateTime" },
+    "actor": { "@id": "prov:wasAssociatedWith" }
+  }
+}
