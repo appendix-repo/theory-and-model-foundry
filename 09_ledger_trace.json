@@ -1,0 +1,249 @@
+[
+ {
+  "@id": "ev:1",
+  "@type": "LedgerEvent",
+  "timestamp": "2026-10-10T18:46:00Z",
+  "actor": {
+   "kind": "human",
+   "name": "case author (paraphrase of Williamson 1975, 1985, 1991)"
+  },
+  "action": "ingest",
+  "inputs": [],
+  "outputs": [
+   "src:InputA"
+  ],
+  "rationale": "Prose input A registered.",
+  "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "hash": "a30ebfb8bec9a0e797cf3de9a89fcac1d3088e825fe26db3e4b885d8bc8c1a2a"
+ },
+ {
+  "@id": "ev:2",
+  "@type": "LedgerEvent",
+  "timestamp": "2026-10-10T18:46:00Z",
+  "actor": {
+   "kind": "human",
+   "name": "case author (paraphrase of Pfeffer & Salancik 1978)"
+  },
+  "action": "ingest",
+  "inputs": [],
+  "outputs": [
+   "src:InputB"
+  ],
+  "rationale": "Prose input B registered.",
+  "prevHash": "a30ebfb8bec9a0e797cf3de9a89fcac1d3088e825fe26db3e4b885d8bc8c1a2a",
+  "hash": "bad8e4ed0d48d77126b1ca48abcae8bf9043a29a0b7e3345ab87e0de20558ae0"
+ },
+ {
+  "@id": "ev:3",
+  "@type": "LedgerEvent",
+  "timestamp": "2026-10-10T18:54:00Z",
+  "actor": {
+   "kind": "agent",
+   "name": "Explicator",
+   "modelVersion": "Claude (Anthropic)",
+   "instructionSetVersion": "Foundry v0.1"
+  },
+  "action": "propose",
+  "inputs": [
+   "src:InputA"
+  ],
+  "outputs": [
+   "tce:ensemble-1",
+   "tce:reading-1",
+   "tce:reading-2",
+   "tce:reading-3"
+  ],
+  "respondsTo": "ev:1",
+  "rationale": "Run 01. Three readings; pivotal differences D1-D4.",
+  "prevHash": "bad8e4ed0d48d77126b1ca48abcae8bf9043a29a0b7e3345ab87e0de20558ae0",
+  "hash": "038d51dff03fc709d258c6ee7c5fd64b8208276c5e691b5ea6e7b5b17ac5aef2"
+ },
+ {
+  "@id": "ev:4",
+  "@type": "LedgerEvent",
+  "timestamp": "2026-10-10T18:55:00Z",
+  "actor": {
+   "kind": "agent",
+   "name": "Explicator",
+   "modelVersion": "Claude (Anthropic)",
+   "instructionSetVersion": "Foundry v0.1"
+  },
+  "action": "propose",
+  "inputs": [
+   "src:InputB"
+  ],
+  "outputs": [
+   "rd:ensemble",
+   "rd:reading1",
+   "rd:reading2",
+   "rd:reading3"
+  ],
+  "respondsTo": "ev:2",
+  "rationale": "Run 02. Three readings; pivot on the meaning of 'constraint'.",
+  "prevHash": "038d51dff03fc709d258c6ee7c5fd64b8208276c5e691b5ea6e7b5b17ac5aef2",
+  "hash": "480ab893631f820a779cb4497fe17fe40933d0f8de39b6b43307410698027c37"
+ },
+ {
+  "@id": "ev:5",
+  "@type": "LedgerEvent",
+  "timestamp": "2026-10-10T18:56:00Z",
+  "actor": {
+   "kind": "agent",
+   "name": "demonstration operator (Claude), standing in for the human theorist",
+   "modelVersion": "Claude (Anthropic)"
+  },
+  "action": "accept",
+  "inputs": [
+   "tce:ensemble-1",
+   "rd:ensemble"
+  ],
+  "outputs": [
+   "tce:reading-1",
+   "rd:reading1"
+  ],
+  "respondsTo": "ev:4",
+  "rationale": "Reading 1 of each adopted for demonstration only; in real use a human decision. adoptedReading left unset in the ensembles.",
+  "prevHash": "480ab893631f820a779cb4497fe17fe40933d0f8de39b6b43307410698027c37",
+  "hash": "b7322dacde6e1c9fb7b079c81a3801c14f86d33cefbae5a789496c5f5c001aca"
+ },
+ {
+  "@id": "ev:6",
+  "@type": "LedgerEvent",
+  "timestamp": "2026-10-10T18:57:00Z",
+  "actor": {
+   "kind": "agent",
+   "name": "Interlocutor (institutional lens)",
+   "modelVersion": "Claude (Anthropic)",
+   "instructionSetVersion": "Foundry v0.1"
+  },
+  "action": "challenge",
+  "inputs": [
+   "tce:reading-1"
+  ],
+  "outputs": [
+   "inst:O1..O10"
+  ],
+  "respondsTo": "ev:5",
+  "rationale": "Run 03. 10 objections (1 fatal to tce:A4); field-template rival.",
+  "prevHash": "b7322dacde6e1c9fb7b079c81a3801c14f86d33cefbae5a789496c5f5c001aca",
+  "hash": "fc9c8df2c723c3b99883c6d2846ec93b7e23e124c70e22a2da5dbca3f20a8730"
+ },
+ {
+  "@id": "ev:7",
+  "@type": "LedgerEvent",
+  "timestamp": "2026-10-10T18:57:00Z",
+  "actor": {
+   "kind": "agent",
+   "name": "Interlocutor (behavioral lens)",
+   "modelVersion": "Claude (Anthropic)",
+   "instructionSetVersion": "Foundry v0.1"
+  },
+  "action": "challenge",
+  "inputs": [
+   "tce:reading-1"
+  ],
+  "outputs": [
+   "beh:O1..O9"
+  ],
+  "respondsTo": "ev:5",
+  "rationale": "Run 04. 9 objections (1 fatal: tce:A13 vs tce:A1); problemistic-search rival.",
+  "prevHash": "fc9c8df2c723c3b99883c6d2846ec93b7e23e124c70e22a2da5dbca3f20a8730",
+  "hash": "89d8f8d7c0a85c96c2b60786557b3f8555aa33333b98bfe5cf5571da9b80147d"
+ },
+ {
+  "@id": "ev:8",
+  "@type": "LedgerEvent",
+  "timestamp": "2026-10-10T18:58:00Z",
+  "actor": {
+   "kind": "agent",
+   "name": "Argument Auditor",
+   "modelVersion": "Claude (Anthropic)",
+   "instructionSetVersion": "Foundry v0.1"
+  },
+  "action": "annotate",
+  "inputs": [
+   "src:InputA",
+   "tce:reading-1"
+  ],
+  "outputs": [
+   "aud:W1..W11"
+  ],
+  "respondsTo": "ev:5",
+  "rationale": "Run 06. 11 warrant gaps; 5 deductive-over-abductive mismatches.",
+  "prevHash": "89d8f8d7c0a85c96c2b60786557b3f8555aa33333b98bfe5cf5571da9b80147d",
+  "hash": "30777f223dbf2ba005cb0df0060b9e50a22161aaaeb1f347f98888de6acfe381"
+ },
+ {
+  "@id": "ev:9",
+  "@type": "LedgerEvent",
+  "timestamp": "2026-10-10T19:00:00Z",
+  "actor": {
+   "kind": "agent",
+   "name": "Model Builder",
+   "modelVersion": "Claude (Anthropic)",
+   "instructionSetVersion": "Foundry v0.1"
+  },
+  "action": "derive",
+  "inputs": [
+   "tce:reading-1"
+  ],
+  "outputs": [
+   "tce:D4..D13",
+   "tce:A16..A21",
+   "tce:P10"
+  ],
+  "respondsTo": "ev:5",
+  "rationale": "Run 05. 5 asserted, 5 open, 1 refuted (P6 on probability scale); surfaced A16-A19. None closed: no checker.",
+  "prevHash": "30777f223dbf2ba005cb0df0060b9e50a22161aaaeb1f347f98888de6acfe381",
+  "hash": "ab53cdbd99eb3c927175f4e1bb0f90b5829697340e044b7eab122e93ab4bc29b"
+ },
+ {
+  "@id": "ev:10",
+  "@type": "LedgerEvent",
+  "timestamp": "2026-10-10T19:01:00Z",
+  "actor": {
+   "kind": "agent",
+   "name": "Integrator",
+   "modelVersion": "Claude (Anthropic)",
+   "instructionSetVersion": "Foundry v0.1"
+  },
+  "action": "align",
+  "inputs": [
+   "tce:reading-1",
+   "rd:reading1"
+  ],
+  "outputs": [
+   "align:tce-rd"
+  ],
+  "respondsTo": "ev:5",
+  "rationale": "Run 07. 1 bridge, 1 rivalry, 3 complementarities, 2 equivocations; integrations I1 (Augment), I2 (Integrate); distance 0.76.",
+  "prevHash": "ab53cdbd99eb3c927175f4e1bb0f90b5829697340e044b7eab122e93ab4bc29b",
+  "hash": "680804394283280904d4020e69387bf1adc9730e91016ff6e4694c1aedfb1932"
+ },
+ {
+  "@id": "ev:11",
+  "@type": "LedgerEvent",
+  "timestamp": "2026-10-10T19:02:00Z",
+  "actor": {
+   "kind": "agent",
+   "name": "Empirical Validation Designer",
+   "modelVersion": "Claude (Anthropic)",
+   "instructionSetVersion": "Foundry v0.1"
+  },
+  "action": "design",
+  "inputs": [
+   "tce:reading-1",
+   "inst:O1..O10",
+   "beh:O1..O9",
+   "rd:reading1"
+  ],
+  "outputs": [
+   "val:RP1..RP7",
+   "val:D1..D7"
+  ],
+  "respondsTo": "ev:7",
+  "rationale": "Run 08. 7 risky predictions; D1 ranked most severe; no design binds all three rivals.",
+  "prevHash": "680804394283280904d4020e69387bf1adc9730e91016ff6e4694c1aedfb1932",
+  "hash": "f78be2460d6357a9e3dce4b26ae112a0c3aee340a4e083bb075e0477740bda92"
+ }
+]
