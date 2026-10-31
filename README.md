@@ -1,8 +1,8 @@
 # Theory and Model Foundry: accompanying repository
 
-This repository accompanies the Stage 1 proposal "Theory and Model Foundry," submitted to the *Organization Science* special issue *AI-Enabled Frontiers in Organizational Science*, and its technical appendix (`FOUNDRY_TECHNICAL_APPENDIX.md`). It holds the instruction sets, the mapping of Foundry roles to Project Lakatos components, the worked transcripts, the draft theory-object schema and the Provenance Ledger trace, so that reviewers can judge the composition directly.
-
 > **Status, 31 October 2026. Delete this block before the repository is posted.** This tree was compiled from the technical appendix (version of 31 October 2026). Files the appendix reproduces in full were copied from it. Each file still to come from the original runs has a placeholder: `instruction-sets/PLACEHOLDER.md` for the two instruction sets, and `tools/check.py.PLACEHOLDER.md` for the Run 05 check script. `MISSING.md` lists them, with the other points to check. Once the originals are in, delete the placeholders and `MISSING.md`, run the Ledger check below from a clean copy and confirm the chain still validates, and confirm that `check.py`, if added, reproduces the results reported in Run 05.
+>
+> This repository accompanies the Stage 1 proposal "Theory and Model Foundry," submitted to the *Organization Science* special issue *AI-Enabled Frontiers in Organizational Science*, and its technical appendix (`FOUNDRY_TECHNICAL_APPENDIX.md`). It holds the instruction sets, the mapping of Foundry roles to Project Lakatos components, the worked transcripts, the draft theory-object schema and the Provenance Ledger trace, so that reviewers can judge the composition directly.
 
 Section references below are to the technical appendix.
 
