@@ -11,7 +11,7 @@ Once both are in, delete `instruction-sets/README.md`.
 
 ## Code
 
-- [ ] `tools/check.py`, the finite-difference and grid check from Run 05. The transcript calls it `scratchpad/mb/check.py` and says it was "not published." If it still exists, add it here and confirm it reproduces the results reported in the Run 05 transcript. If it's gone, delete `tools/README.md` and the README's `check.py` row.
+- [ ] `tools/check.py`, the finite-difference and grid check from Run 05. The transcript calls it `scratchpad/mb/check.py` and says it was "not published." If it still exists, add it here and confirm it reproduces the results reported in the Run 05 transcript. If it's gone, delete `tools/placeholder.md` and the README's `check.py` row.
 
 ## Please check
 
