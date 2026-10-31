@@ -2,13 +2,15 @@
 
 This repository accompanies the Stage 1 proposal "Theory and Model Foundry," submitted to the *Organization Science* special issue *AI-Enabled Frontiers in Organizational Science*, and its technical appendix (`FOUNDRY_TECHNICAL_APPENDIX.md`). It holds the instruction sets, the mapping of Foundry roles to Project Lakatos components, the worked transcripts, the draft theory-object schema and the Provenance Ledger trace, so that reviewers can judge the composition directly.
 
+> **Status, 31 October 2026. Delete this block before the repository is posted.** This tree was compiled from the technical appendix (version of 31 October 2026). Files the appendix reproduces in full were copied from it. Each file still to come from the original runs has a placeholder: `instruction-sets/PLACEHOLDER.md` for the two instruction sets, and `tools/check.py.PLACEHOLDER.md` for the Run 05 check script. `MISSING.md` lists them, with the other points to check. Once the originals are in, delete the placeholders and `MISSING.md`, run the Ledger check below from a clean copy and confirm the chain still validates, and confirm that `check.py`, if added, reproduces the results reported in Run 05.
+
 Section references below are to the technical appendix.
 
 ## Contents
 
 | Path | Contents | Appendix | Status |
 |---|---|---|---|
-| `instruction-sets/` | The six Foundry role instruction sets, v0.2 (current) and v0.1 (used for the runs) | §1, §3.0, §6 | **Placeholder: to be added** |
+| `instruction-sets/` | The six Foundry role instruction sets, v0.2 (current) and v0.1 (used for the runs) | §1, §3.0, §6 | **Placeholder: to be added** (`instruction-sets/PLACEHOLDER.md`) |
 | `mapping/ROLE_TO_LAKATOS_MAPPING.md` | The seventeen scholarly-role agents, the role-by-role mapping, and the coverage audit | §2 | Present |
 | `lakatos/LAKATOS_TABLES_1-4.md` | Project Lakatos Tables 1–4: routine agents, cognitive operators, discourse grammar, agent types | Annex C | Present |
 | `schema/theory-object.v0.schema.json` | Theory-object JSON Schema, draft v0 (draft 2020-12) | §4, Annex A.1 | Present |
@@ -17,7 +19,7 @@ Section references below are to the technical appendix.
 | `runs/01_…` to `runs/08_…` | The eight worked transcripts, one per run | §3, Annex B.1–B.8 | Present |
 | `runs/09_ledger_trace.json` | The Provenance Ledger trace for Runs 01–08 (11 hash-chained events) | §3.8, Annex B.9 | Present |
 | `tools/verify_ledger.py` | Recomputes the Ledger hash chain | §3.8 | Present |
-| `tools/check.py` | Informal derivation check used in Run 05 | Annex B.5 | **Placeholder: to be added if available** |
+| `tools/check.py` | Informal derivation check used in Run 05 | Annex B.5 | **Placeholder: to be added if available** (`tools/check.py.PLACEHOLDER.md`) |
 
 ## The runs
 
