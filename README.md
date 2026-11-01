@@ -1,53 +1,35 @@
-> **Status, 31 October 2026. Delete this block before the repository is posted.** This tree was compiled from the technical appendix (version of 31 October 2026). Files the appendix reproduces in full were copied from it. Each file still to come from the original runs has a placeholder: `instruction-sets/PLACEHOLDER.md` for the two instruction sets, and `tools/check.py.PLACEHOLDER.md` for the Run 05 check script. `MISSING.md` lists them, with the other points to check. Once the originals are in, delete the placeholders and `MISSING.md`, run the Ledger check below from a clean copy and confirm the chain still validates, and confirm that `check.py`, if added, reproduces the results reported in Run 05.
->
+# Re-running the agent roles
 
-# Theory and Model Foundry: accompanying repository
+The transcripts in `runs/` are single, unedited runs (appendix Section 3.0). They cannot be reproduced word for word: a language model gives different output on each call, the model version used on 10 October 2026 was not recorded (the Ledger says only "Claude (Anthropic)"), and the exact prompts were not archived. This folder lets a reviewer re-run any role, or the whole sequence, and judge whether the instruction sets reliably produce outputs of the type the appendix describes.
 
-This repository accompanies the Stage 1 proposal "Theory and Model Foundry," submitted to the *Organization Science* special issue *AI-Enabled Frontiers in Organizational Science*, and its technical appendix (`FOUNDRY_TECHNICAL_APPENDIX.md`). It holds the instruction sets, the mapping of Foundry roles to Project Lakatos components, the worked transcripts, the draft theory-object schema and the Provenance Ledger trace, so that reviewers can judge the composition directly.
+## Files
 
-Section references below are to the technical appendix.
+| File | What it does |
+|---|---|
+| `runs.json` | The input bundle of each run: which role section, which lens, which inputs. It follows the inputs each transcript names in its header and the sequence table of Section 3.0. |
+| `build_prompts.py` | Builds each prompt: the common preamble and the role's section of instruction set v0.1 as the system prompt; the schema and the inputs as the user message. Writes `harness/prompts/run_XX.md` for inspection. |
+| `run_role.py` | Sends a prompt to the Claude API, streams the response, and saves `reruns/run_XX_<UTC time>.md` with a `.json` record of the model that served it, the stop reason, token usage, the prompt's SHA-256 and the prompt's sources. |
+| `inspect_rerun.py` | Validates the JSON in a rerun against schema v0 and prints its counts (constructs, assumptions, propositions, derivation statuses, link kinds), for comparison with `checks/chk_04_run_counts.py` on the stored runs. |
 
-## Contents
-
-| Path | Contents | Appendix | Status |
-|---|---|---|---|
-| `instruction-sets/` | The six Foundry role instruction sets, v0.2 (current) and v0.1 (used for the runs) | §1, §3.0, §6 | **Placeholder: to be added** (`instruction-sets/PLACEHOLDER.md`) |
-| `mapping/ROLE_TO_LAKATOS_MAPPING.md` | The seventeen scholarly-role agents, the role-by-role mapping, and the coverage audit | §2 | Present |
-| `lakatos/LAKATOS_TABLES_1-4.md` | Project Lakatos Tables 1–4: routine agents, cognitive operators, discourse grammar, agent types | Annex C | Present |
-| `schema/theory-object.v0.schema.json` | Theory-object JSON Schema, draft v0 (draft 2020-12) | §4, Annex A.1 | Present |
-| `schema/context.v0.jsonld` | JSON-LD context for the schema | §4, Annex A.2 | Present |
-| `runs/case_inputs.md` | The two prose theory inputs (transaction-cost and resource-dependence accounts of firm boundaries) | Annex B.0 | Present |
-| `runs/01_…` to `runs/08_…` | The eight worked transcripts, one per run | §3, Annex B.1–B.8 | Present |
-| `runs/09_ledger_trace.json` | The Provenance Ledger trace for Runs 01–08 (11 hash-chained events) | §3.8, Annex B.9 | Present |
-| `tools/verify_ledger.py` | Recomputes the Ledger hash chain | §3.8 | Present |
-| `tools/check.py` | Informal derivation check used in Run 05 | Annex B.5 | **Placeholder: to be added if available** (`tools/check.py.PLACEHOLDER.md`) |
-
-## The runs
-
-| File | Role | Input |
-|---|---|---|
-| `runs/01_explicator_tce.md` | Explicator | Input A (transaction-cost theory) |
-| `runs/02_explicator_rd.md` | Explicator | Input B (resource-dependence theory) |
-| `runs/03_interlocutor_institutional_tce.md` | Interlocutor, institutional lens | Transaction-cost reading 1 |
-| `runs/04_interlocutor_behavioral_tce.md` | Interlocutor, behavioral lens | Transaction-cost reading 1 |
-| `runs/05_model_builder_tce.md` | Model Builder | Transaction-cost reading 1 |
-| `runs/06_argument_auditor_tce.md` | Argument Auditor | Input A and transaction-cost reading 1 |
-| `runs/07_integrator_tce_rd.md` | Integrator | Transaction-cost and resource-dependence readings 1 |
-| `runs/08_empirical_validation_designer_tce.md` | Empirical Validation Designer | Transaction-cost reading 1 and the rivals from Runs 02–04 |
-
-The transcripts are single, unedited runs of instruction set v0.1, produced on 10 October 2026. Each run was executed by a separate instance of Claude (Anthropic), given only the common preamble, its own role's instruction set, the schema and its inputs. No run was repeated or selected from several. Section 3.0 of the appendix describes how the runs were produced and what stood in for the human theorist at the reading-adoption gate.
-
-The agents' "(to verify)" flags are kept in the transcripts as part of the record. Every flagged work is checked, with any correction, in the citation verification table in Section 3.0 of the appendix.
-
-## The Ledger trace
-
-The Ledger is Stage 1 work. The trace in `runs/09_ledger_trace.json` was assembled after the runs, with reconstructed timestamps (Section 3.8). Each event's hash is SHA-256 over the event's JSON, without its `hash` field and with keys sorted, and each event carries the previous event's hash. To check the chain:
+## Use
 
 ```
-python tools/verify_ledger.py
+pip install -r harness/requirements.txt
+export ANTHROPIC_API_KEY=...
+
+python3 harness/build_prompts.py                         # inspect the prompts first
+python3 harness/run_role.py 05                           # rerun the Model Builder on the stored Run 01 object
+python3 harness/run_role.py 01 02 03 04 05 06 07 08 --chain   # rerun the sequence, each run fed by the reruns before it
+python3 harness/inspect_rerun.py reruns/run_01_<time>.md
 ```
 
-## Notes
+Without `--chain`, every run takes its upstream inputs from the stored transcripts, so each role can be judged on exactly the inputs the original run had. With `--chain`, a run takes its inputs from the latest rerun of the run it depends on.
 
-- The `https://foundry.lakatos.example/…` identifiers in the schema, the context and the transcripts are placeholder namespaces, not live URLs.
-- In the transcripts, `case_inputs.md` refers to `runs/case_inputs.md`, and `../schema/context.v0.jsonld` resolves from `runs/` to `schema/`.
+The default model is `claude-opus-5-5` with adaptive thinking at effort `high`; `--model` and `--effort` change them. Server-side refusal fallback, which can finish a request on a different model, is off by default so that each rerun record names one model; `--allow-fallback` turns it on, and the `.json` record always says which model served the response.
+
+## Reconstruction choices
+
+- Interlocutors get only their own lens row, with `[LENS]` filled in.
+- Theory objects are passed as the reading-1 JSON object (the first JSON block of Run 01 or Run 02). The original runs may have been given the whole transcript.
+- The Integrator is also given the draft definitions of Section 4.3, because Run 07 quotes them ("draft definition, appendix D §4.3"). Whether the other runs saw any part of the appendix is not recorded.
+- The Empirical Validation Designer is given both reading-1 objects and the full transcripts of Runs 03 and 04, which are where the rival explanations it uses come from.

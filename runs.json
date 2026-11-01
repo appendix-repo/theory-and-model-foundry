@@ -1,0 +1,20 @@
+{
+  "_note": "Reconstructed input bundles for Runs 01 to 08 (appendix Section 3.0: each run was given 'only the common preamble, its own role's instruction set, the schema, and its inputs'). The exact prompts were not archived; these bundles follow the inputs each run names in its own header and in the Section 3.0 sequence table. 'stored:' inputs are read from runs/ (or extracted/); with --chain, outputs of earlier reruns are used instead where they exist.",
+  "instruction_set": "instruction-sets/FOUNDRY_ROLE_INSTRUCTION_SETS_v0.1.md",
+  "runs": {
+    "01": {"role": "Role 1. The Explicator", "inputs": ["input:A"]},
+    "02": {"role": "Role 1. The Explicator", "inputs": ["input:B"]},
+    "03": {"role": "Role 2. The Interlocutors", "lens": "Institutional", "inputs": ["object:tce_reading-1"]},
+    "04": {"role": "Role 2. The Interlocutors", "lens": "Behavioral", "inputs": ["object:tce_reading-1"]},
+    "05": {"role": "Role 4. The Model Builder", "inputs": ["object:tce_reading-1"]},
+    "06": {"role": "Role 5. The Argument Auditor", "inputs": ["input:A", "object:tce_reading-1"]},
+    "07": {"role": "Role 3. The Integrator", "inputs": ["object:tce_reading-1", "object:rd_reading1", "appendix:4.3"]},
+    "08": {"role": "Role 6. The Empirical Validation Designer", "inputs": ["object:tce_reading-1", "object:rd_reading1", "run:03", "run:04"]}
+  },
+  "chain_sources": {
+    "object:tce_reading-1": "01",
+    "object:rd_reading1": "02",
+    "run:03": "03",
+    "run:04": "04"
+  }
+}
