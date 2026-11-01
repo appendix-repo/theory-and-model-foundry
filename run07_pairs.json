@@ -1,0 +1,22 @@
+{
+  "_source": "Run 07 (runs/07_integrator_TCE_RD.md), Sections 1, 2 and 5. The eight construct pairs the Integrator considered, each with its classification and the two primary nodes whose licensed inferences give the pair's weight. The classifications are the Integrator's own; they are transcribed here, not computed. The weights are recomputed by checks/chk_05_inferential_distance.py from the theory objects in Runs 01 and 02.",
+  "pairs": [
+    {"link": "L1", "kind": "bridge",          "tce": "tce:C2",  "rd": "rd:C1",  "stated_weight": 4},
+    {"link": "L2", "kind": "rivalry",         "tce": "tce:C15", "rd": "rd:C8",  "stated_weight": 2},
+    {"link": "L3", "kind": "complementarity", "tce": "tce:C6",  "rd": "rd:C4",  "stated_weight": 3},
+    {"link": "L4", "kind": "equivocation",    "tce": "tce:C3",  "rd": "rd:C9",  "stated_weight": 2},
+    {"link": "L5", "kind": "equivocation",    "tce": "tce:C12", "rd": "rd:C12", "stated_weight": 2},
+    {"link": "L6", "kind": "complementarity", "tce": "tce:S3",  "rd": "rd:C17", "stated_weight": 1},
+    {"link": "L7", "kind": "complementarity", "tce": "tce:C11", "rd": "rd:C14", "stated_weight": 2},
+    {"link": "(8)", "kind": "none",           "tce": "tce:C4",  "rd": "rd:C2",  "stated_weight": 1}
+  ],
+  "stated_results": {
+    "distance_draft": 0.76,
+    "distance_draft_fraction": "13/17",
+    "unweighted": 0.875,
+    "excluding_unaligned": 0.75,
+    "L1_half_weight": 0.88,
+    "distance_graded": 0.38,
+    "graded_numerator": 6.5
+  }
+}

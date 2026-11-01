@@ -1,0 +1,37 @@
+work,runs,reference,use,verdict
+Alchian 1950,06,"*Journal of Political Economy* 58(3), 211–221",Selection does not guarantee optimality,Supported
+"Alfaro, Conconi, Fadinger & Newman 2016",08,"*Review of Economic Studies* 83(3), 855–888",Output prices affect integration,Supported
+Argyres 1996 †,04,"*Strategic Management Journal* 17(2), 129–150","Make-or-buy driven ""by relative capabilities more than by hazard""","*Partly.* Asset specificity alone was decisive in some decisions, capabilities or combinations in others; ""more than"" overstates"
+"Baker, Gibbons & Murphy 2002",06,"*Quarterly Journal of Economics* 117(1), 39–84",Relational contracts sustain cooperation without integration,Supported
+Balakrishnan & Wernerfelt 1986,06,"*Strategic Management Journal* 7(4), 347–359",Technological change lowers the attraction of integration,Supported
+"Boehm, Flaaen & Pandalai-Nayar 2019",08,"*Review of Economics and Statistics* 101(1), 60–75",Supplier-link data after the 2011 Tōhoku earthquake,Supported (data are US affiliates of Japanese multinationals)
+"Carvalho, Nirei, Saito & Tahbaz-Salehi 2021",08,"*Quarterly Journal of Economics* 136(2), 1255–1321",Firm-level supplier links after the 2011 earthquake,Supported
+Casciaro & Piskorski 2005 †,"02, 07, 08","*Administrative Science Quarterly* 50(2), 167–199","Mutual dependence promotes, imbalance hinders, M&A; inter-industry dependence indexed with input-output data","Supported on the findings. The 0.80 rate ratio in Run 08 is the agent's assumption, not an estimate from the paper"
+Coase 2000,03,"*Journal of Law and Economics* 43(1), 15–31",GM was not held up by Fisher Body; the acquisition brought the Fisher brothers into GM,Supported
+David & Han 2004,04,"*Strategic Management Journal* 25(1), 39–58",Empirical support for the uncertainty predictions is mixed,Supported
+Dyer 1996,"03, 08","*Strategic Management Journal* 17(4), 271–291",Japanese automaker supplier networks with dedicated assets under hybrid governance,Supported
+Freeland 2000,03,"*Journal of Law and Economics* 43(1), 33–66",No pre-merger hold-up; integration retained the Fishers' human capital,Supported
+Ghoshal & Moran 1996,"04, 06","*Academy of Management Review* 21(1), 13–47",Assuming opportunism and governing for it can produce it,Supported
+Grossman & Hart 1986,"06, 07","*Journal of Political Economy* 94(4), 691–719",Integration reallocates residual control rights rather than removing hold-up,Supported
+"Hsieh, Bloch & Larsen 1998",08,"*Statistics in Medicine* 17(14), 1623–1634",Sample-size formula for logistic regression with variance inflation,Supported. The inflation factor is 1/(1 − ρ²); Run 08's 1/(1 − 0.30) treats 0.30 as the squared multiple correlation
+Jensen 1986,06,"*American Economic Review* 76(2), 323–329",Managers use free cash flow for empire-building,Supported
+Joskow 1987,06,"*American Economic Review* 77(1), 168–185",Contract duration rises with relationship-specific investment,Supported
+"Kahneman, Knetsch & Thaler 1986",04,"*American Economic Review* 76(4), 728–741","Exploiting a shift in bargaining power is judged unfair, and punished","*Partly.* The AER paper reports fairness judgments; the punishment evidence is in the authors' companion paper (*Journal of Business* 59(4), S285–S300, 1986)"
+Klein & Leffler 1981,06,"*Journal of Political Economy* 89(4), 615–641",Reputational premia assure performance,Supported
+"Klein, Crawford & Alchian 1978","03, 06","*Journal of Law and Economics* 21(2), 297–326",Appropriable quasi-rents; GM–Fisher Body as the hold-up case,Supported
+Lafontaine & Slade 2007,"06, 08","*Journal of Economic Literature* 45(3), 629–685",Positive specificity effects; endogeneity and measurement problems,Supported
+Macaulay 1963,06,"*American Sociological Review* 28(1), 55–67",Non-contractual relations in business,Supported
+Macher & Richman 2008,"06, 08","*Business and Politics* 10(1), 1–63",Review of empirical TCE: consistent positive specificity effects,Supported
+Masten 1984,01,"*Journal of Law and Economics* 27(2), 403–417",Historical priority of P5,"Supported: the test postdates Williamson (1975), consistent with P5's provisional ""novel"" status"
+Ménard 2004,06,"*Journal of Institutional and Theoretical Economics* 160(3), 345–376",Hybrids have distinct governance mechanisms,Supported
+Milgrom & Roberts 1988,06,"*American Journal of Sociology* 94 (Suppl.), S154–S179",Influence activities as a cost of hierarchy,Supported
+Monteverde & Teece 1982,"01, 04, 08","*Bell Journal of Economics* 13(1), 206–213",Priority of P5; engineering-effort measure possibly a consequence of integration,Supported. The design is cross-sectional and does not rule out the reverse direction Run 04 raises
+Nelson & Winter 1982,06,"*An Evolutionary Theory of Economic Change*, Harvard University Press",Inefficient routines can persist,Supported
+Nunn 2007,08,"*Quarterly Journal of Economics* 122(2), 569–600",Relationship-specificity index: share of inputs not exchange-traded or reference-priced,Supported
+Pfeffer & Salancik 1978,02,"*The External Control of Organizations*, Harper & Row",Industry merger patterns as early evidence,"Supported. The early evidence is Pfeffer (1972, *ASQ* 17(3), 382–394), which used input-output data, also answering Run 07's flag on that indicator"
+Pierce & Schott 2016,08,"*American Economic Review* 106(7), 1632–1662",Normal-trade-relations gap at the 2001 grant of PNTR,Supported
+Riordan & Williamson 1985,06,"*International Journal of Industrial Organization* 3(4), 365–378",Production-cost economies traded off against governance costs,Supported
+Shelanski & Klein 1995,06,"*Journal of Law, Economics, and Organization* 11(2), 335–361",Specificity–integration link among the more robust findings; uncertainty mixed,Supported
+Walker & Weber 1984 †,"04, 06, 08","*Administrative Science Quarterly* 29(3), 373–391",Comparative production costs and volume uncertainty mattered; the specificity proxy (supplier-market competition) was weak,"*Partly.* Comparative production costs were the strongest predictor, but supplier-market competition also predicted make-or-buy with production costs controlled, so ""weak"" understates it"
+Williamson 1983,06,"*American Economic Review* 73(4), 519–540",Credible commitments and hostages,Supported
+Williamson 1991,"05, 06","*Administrative Science Quarterly* 36(2), 269–296",Hybrids lose viability as the frequency of disturbances rises,Supported (page for A21's formulation not checked)
