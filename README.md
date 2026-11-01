@@ -1,6 +1,6 @@
 # Theory and Model Foundry: replication package
 
-This repository accompanies the Stage 1 proposal "Theory and Model Foundry," submitted to the Organization Science Special Issue *AI-Enabled Frontiers in Organizational Science*, and its technical appendix (a copy is in `docs/FOUNDRY_TECHNICAL_APPENDIX.md`). Section numbers below refer to the appendix. The repository is anonymized for review.
+This repository accompanies the Stage 1 proposal "Theory and Model Foundry," submitted to the Organization Science Special Issue *AI-Enabled Frontiers in Organizational Science*, and its technical appendix (a copy is in `technical-appendix/FOUNDRY_TECHNICAL_APPENDIX.md`). Section numbers below refer to the appendix. The repository is anonymized for review.
 
 It contains everything the appendix and the proposal cite: the six role instruction sets, the draft theory-object schema, the transcripts of the eight worked runs, the Provenance Ledger trace, and the Project Lakatos component tables. It adds code that recomputes, from those files, every number, count and structural claim the appendix reports, and a harness for re-running the agent roles.
 
