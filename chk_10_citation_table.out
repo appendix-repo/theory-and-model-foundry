@@ -1,0 +1,10 @@
+== Check 10: citation verification table ==
+[PASS] works in the table: got 36, appendix/run states 36
+[PASS] supported: got 33, appendix/run states 33
+[PASS] partly supported: got 3, appendix/run states 3
+[PASS] the partly supported works: got ['Argyres 1996', 'Kahneman, Knetsch & Thaler 1986', 'Walker & Weber 1984'], appendix/run states ['Argyres 1996', 'Kahneman, Knetsch & Thaler 1986', 'Walker & Weber 1984']
+[PASS] works marked † (publisher abstract or secondary summary consulted): got 3, appendix/run states 3
+[PASS] table rows whose listed runs do not cite the work (excluding the known indirect case): got [], appendix/run states []
+[DISCREPANCY] Casciaro & Piskorski 2005 is named in Run 07: got ['Casciaro & Piskorski 2005 not found in Run 07'], expected [] -- Run 07 refers to this work only through Run 02 ('the indicator Run 02 names'); the table's run list includes 07 on that basis.
+[INFO] 'to verify' citations found by pattern: 27; not in the table: none
+RESULT: PASS

@@ -1,0 +1,37 @@
+== Check 06: Model Builder (Run 05) numbers and counter-examples ==
+[PASS] item 1 (D6): phi_MX at s=(1,0.5,0), bH=1, bX=0.6: got 1.2, appendix/run states 1.2
+[PASS] item 1 (D6): phi_XH: got 0.8, appendix/run states 0.8
+[PASS] item 1 (D6): structures ever chosen on phi in [0, 5]: got ['H', 'M'], appendix/run states ['H', 'M']
+[PASS] item 1 (D6): bX = 0.5 is the knife edge (phi_MX == phi_XH): got True, appendix/run states True
+[PASS] item 1 (D6): with A18 satisfied (bX = 0.3) all three are chosen: got ['H', 'M', 'X'], appendix/run states ['H', 'M', 'X']
+[PASS] A18 (symbolic): (A18 expression) / (chord expression) == (1 - s_H) / ((1 - s_X)(s_X - s_H)): got 0, appendix/run states 0
+[INFO] Since 1 > s_X > s_H, that factor is positive, so A18 holds iff (s_X, beta_X) lies below the chord.
+[PASS] item 2 (D10): phi2(0, u) == 0: got 0, appendix/run states 0
+[PASS] item 2 (D10): d phi2/du == k exp(-k) (> 0 for k > 0): got 0, appendix/run states 0
+[PASS] item 2 (D10): min over k in [0,20] of d phi2/dk at u = 7 is > 0: got True, appendix/run states True
+[PASS] item 2 (D10): d phi2/dk at k=2 is 1 - u e^-2, positive iff u < e^2: got 0, appendix/run states 0
+[PASS] item 2 (D10): d2 phi2/dk du == (1-k) exp(-k): got 0, appendix/run states 0
+[PASS] item 2 (D10): d2 phi2/dk du at k = 2 is negative: got True, appendix/run states True
+[PASS] item 3 (D9): P at (k,u)=(3,1): got 0.846, appendix/run states 0.846
+[PASS] item 3 (D9): cross-partial at (3,1) (2 dp): got -0.1, appendix/run states -0.1
+[PASS] item 3 (D9): bracket at (3,1) (2 dp): got -0.87, appendix/run states -0.87
+[PASS] item 3 (D9): closed form agrees with finite differences at (3,1): got True, appendix/run states True
+[PASS] item 3 (D9): P at (k,u)=(1,1): got 0.475, appendix/run states 0.475
+[PASS] item 3 (D9): cross-partial at (1,1) (2 dp): got 0.23, appendix/run states 0.23
+[PASS] item 3 (D9): closed form agrees with finite differences at (1,1): got True, appendix/run states True
+[PASS] item 3 (D9, symbolic): d2P/dk du == Lambda'(z) c [(1-2P) c phi_k phi_u + phi_ku]: got 0, appendix/run states 0
+[PASS] item 4 (D13): Pr(H | k=0, u=0.5): got 0.1745, appendix/run states 0.1745
+[PASS] item 4 (D13): Pr(H | k=0, u=2.0): got 0.1745, appendix/run states 0.1745
+[INFO] item 4 parameters beta_X=0.3, beta_H=1, sigma=1 are inferred; Run 05 does not state them.
+[PASS] item 4 (D8): ln Pr(H) increases in k on a grid (phi = u k): got True, appendix/run states True
+[PASS] item 5 (symbolic): solving the A18 boundary for s_X gives 1 - beta_X (1 - s_H)/beta_H: got True, appendix/run states True
+[PASS] item 5: s_bar at beta_X=0.3, beta_H=1, s_H=0.1 (2 dp): got 0.73, appendix/run states 0.73
+[PASS] item 5: hybrid band at u = 0.5 (2 dp): got (0.5, 2.33), appendix/run states (0.5, 2.33)
+[PASS] item 5: hybrid band width at u = 2 (2 dp): got 0.17, appendix/run states 0.17
+[PASS] item 5: hybrid band empty at u = 2.5: got True, appendix/run states True
+[INFO] item 5 schedule s_X(u) = 0.3 + 0.2u is inferred; it is a linear schedule that reproduces all three cited values.
+[PASS] item 6: with pi == 0 (phi == 0) the market is chosen for every parameter set tried: got {'M'}, appendix/run states {'M'}
+[PASS] Section 7 D4: d/dk [pi(u) q(k)] == pi(u) q'(k): got 0, appendix/run states 0
+[PASS] Section 7 D12: dk*/du == -phi_u / phi_k: got 0, appendix/run states 0
+[PASS] Section 7 D13: dC_g/du at k=0, q(0)=0, is 0 for all g: got [0, 0, 0], appendix/run states [0, 0, 0]
+RESULT: PASS

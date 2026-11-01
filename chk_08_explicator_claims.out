@@ -1,0 +1,10 @@
+== Check 08: Explicator claims (Runs 01 and 02) ==
+[PASS] Run 02 (sum rule): rank of the four dyadic quantities in (D_AB, D_BA): got 2, appendix/run states 2
+[PASS] Run 02 (mean rule): rank of the four dyadic quantities in (D_AB, D_BA): got 2, appendix/run states 2
+[PASS] rd:D2: d(mutual)/dD_AB and d(imbalance)/dD_AB under the sum rule: got (1, 1), appendix/run states (1, 1)
+[PASS] rd:D2 status recorded by Run 02: got 'asserted', appendix/run states 'asserted'
+[PASS] rd:D2 auxiliary required: got ['rd:A10'], appendix/run states ['rd:A10']
+[PASS] Run 02 openQuestions state the two-degrees-of-freedom point: got True, appendix/run states True
+[PASS] Run 01: reading-1 propositions changed in another reading: got ['tce:P3', 'tce:P4', 'tce:P7'], appendix/run states ['tce:P3', 'tce:P4', 'tce:P7']
+[PASS] Run 01: dispersion proxy (2 dp): got 0.43, appendix/run states 0.43
+RESULT: PASS

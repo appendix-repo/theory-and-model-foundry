@@ -1,0 +1,22 @@
+== Check 11: Section 4.3 quantities on the reading-1 objects (demonstration only) ==
+tce:reading-1: specification completeness = 0.863 (construct slots 0.863 x relations with form and sign 1.000)
+tce:reading-1: derivational tightness = 0.500 over 3 derivations
+tce:reading-1: falsifiability surface = 0.000 (0 propositions novel with a rival divergence; no rival divergences are recorded in reading 1, because rivals come later in the loop)
+tce:reading-1: assumption load = 0.857 auxiliaries per proposition (6 auxiliaries); hidden share = 0.667 (4 surfaced)
+[PASS] tce:reading-1: specification completeness in [0, 1]: got True, appendix/run states True
+[PASS] tce:reading-1: derivational tightness in [0, 1]: got True, appendix/run states True
+[PASS] tce:reading-1: falsifiability surface in [0, 1]: got True, appendix/run states True
+[PASS] tce:reading-1: hidden assumption share in [0, 1]: got True, appendix/run states True
+rd:reading1: specification completeness = 0.842 (construct slots 0.842 x relations with form and sign 1.000)
+rd:reading1: derivational tightness = 0.500 over 3 derivations
+rd:reading1: falsifiability surface = 0.000 (0 propositions novel with a rival divergence; no rival divergences are recorded in reading 1, because rivals come later in the loop)
+rd:reading1: assumption load = 0.667 auxiliaries per proposition (6 auxiliaries); hidden share = 0.167 (1 surfaced)
+[PASS] rd:reading1: specification completeness in [0, 1]: got True, appendix/run states True
+[PASS] rd:reading1: derivational tightness in [0, 1]: got True, appendix/run states True
+[PASS] rd:reading1: falsifiability surface in [0, 1]: got True, appendix/run states True
+[PASS] rd:reading1: hidden assumption share in [0, 1]: got True, appendix/run states True
+tce:reading-1 after the Model Builder: derivational tightness = 0.144 over 11 attempts (before: 0.500 over 3 asserted derivations)
+tce:reading-1 after the Model Builder: assumption load = 1.714 (6 stated + 6 surfaced auxiliaries, 7 propositions); hidden share = 0.833
+[PASS] after-pass derivational tightness in [0, 1]: got True, appendix/run states True
+[PASS] Run 05 derivation attempts parsed: got 11, appendix/run states 11
+RESULT: PASS

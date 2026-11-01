@@ -1,0 +1,27 @@
+== Check 05: inferential distance, TCE reading 1 vs RD reading 1 ==
+[PASS] L1 tce:C2 <-> rd:C1 (bridge): weight: got 4, appendix/run states 4
+[PASS] L2 tce:C15 <-> rd:C8 (rivalry): weight: got 2, appendix/run states 2
+[PASS] L3 tce:C6 <-> rd:C4 (complementarity): weight: got 3, appendix/run states 3
+[PASS] L4 tce:C3 <-> rd:C9 (equivocation): weight: got 2, appendix/run states 2
+[PASS] L5 tce:C12 <-> rd:C12 (equivocation): weight: got 2, appendix/run states 2
+[PASS] L6 tce:S3 <-> rd:C17 (complementarity): weight: got 1, appendix/run states 1
+[PASS] L7 tce:C11 <-> rd:C14 (complementarity): weight: got 2, appendix/run states 2
+[PASS] (8) tce:C4 <-> rd:C2 (none): weight: got 1, appendix/run states 1
+[PASS] total weight / bridge weight: got (17, 4), appendix/run states (17, 4)
+[PASS] draft distance as a fraction: got Fraction(13, 17), appendix/run states Fraction(13, 17)
+[PASS] draft distance (2 dp): got 0.76, appendix/run states 0.76
+[PASS] sensitivity: unweighted: got 0.875, appendix/run states 0.875
+[PASS] sensitivity: excluding the unaligned pair: got 0.75, appendix/run states 0.75
+[PASS] sensitivity: L1 at half weight (2 dp): got 0.88, appendix/run states 0.88
+[PASS] graded numerator: got 6.5, appendix/run states 6.5
+[PASS] graded distance (2 dp): got 0.38, appendix/run states 0.38
+[PASS] pair kinds L1..L7 agree with the AlignmentMap links, in order: got ['bridge', 'rivalry', 'complementarity', 'equivocation', 'equivocation', 'complementarity', 'complementarity'], appendix/run states ['bridge', 'rivalry', 'complementarity', 'equivocation', 'equivocation', 'complementarity', 'complementarity']
+[PASS] L1: one of its constructs appears in the AlignmentMap link: got True, appendix/run states True
+[PASS] L2: one of its constructs appears in the AlignmentMap link: got True, appendix/run states True
+[PASS] L3: one of its constructs appears in the AlignmentMap link: got True, appendix/run states True
+[PASS] L4: one of its constructs appears in the AlignmentMap link: got True, appendix/run states True
+[PASS] L5: one of its constructs appears in the AlignmentMap link: got True, appendix/run states True
+[PASS] L6: one of its constructs appears in the AlignmentMap link: got True, appendix/run states True
+[PASS] L7: one of its constructs appears in the AlignmentMap link: got True, appendix/run states True
+[INFO] L6's TCE side, tce:S3, is a scope condition; the AlignmentMap records the link under rd:C7, rd:C17 and tce:C9 and names tce:S3 in 'discharges'.
+RESULT: PASS

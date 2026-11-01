@@ -1,0 +1,17 @@
+== Check 01: appendix matches repository files ==
+[PASS] Annex B.0 == runs/case_inputs.md (5 lines): got True, appendix/run states True
+[PASS] Annex B.1 == runs/01_explicator_TCE.md (662 lines): got True, appendix/run states True
+[PASS] Annex B.2 == runs/02_explicator_RD.md (386 lines): got True, appendix/run states True
+[PASS] Annex B.3 == runs/03_interlocutor_institutional_TCE.md (95 lines): got True, appendix/run states True
+[PASS] Annex B.4 == runs/04_interlocutor_behavioral_TCE.md (99 lines): got True, appendix/run states True
+[PASS] Annex B.5 == runs/05_model_builder_TCE.md (178 lines): got True, appendix/run states True
+[PASS] Annex B.6 == runs/06_argument_auditor_TCE.md (81 lines): got True, appendix/run states True
+[PASS] Annex B.7 == runs/07_integrator_TCE_RD.md (170 lines): got True, appendix/run states True
+[PASS] Annex B.8 == runs/08_validation_designer_TCE.md (124 lines): got True, appendix/run states True
+[PASS] Annex B.9 == runs/09_ledger_trace.json: got True, appendix/run states True
+[PASS] Annex A.1 == schema/theory-object.v0.schema.json: got True, appendix/run states True
+[PASS] Annex A.2 == schema/context.v0.jsonld: got True, appendix/run states True
+[PASS] Section 1.8 lens table == instruction-sets v0.2 lens table: got True, appendix/run states True
+[PASS] v0.1 and v0.2 differ only in the lens table (Section 3.0, 1.8): got True, appendix/run states True
+[INFO] Word count (whitespace tokens): Sections 0 to 6 = 11809; with References = 12568. The appendix front matter says 'about 10,500'. Informational only.
+RESULT: PASS

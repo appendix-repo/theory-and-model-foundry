@@ -1,0 +1,21 @@
+== Check 03: Provenance Ledger hash chain ==
+[PASS] number of events: got 11, appendix/run states 11
+[PASS] first prevHash is the genesis value: got '0000000000000000000000000000000000000000000000000000000000000000', appendix/run states '0000000000000000000000000000000000000000000000000000000000000000'
+[PASS] hash-chain problems: got [], appendix/run states []
+[PASS] rebuilding every hash from the event bodies reproduces the stored file: got True, appendix/run states True
+[PASS] ev:1 matches the Section 3.8 table row: got ('ev:1', '18:46', 'human', 'ingest', None), appendix/run states ('ev:1', '18:46', 'human', 'ingest', None)
+[PASS] ev:2 matches the Section 3.8 table row: got ('ev:2', '18:46', 'human', 'ingest', None), appendix/run states ('ev:2', '18:46', 'human', 'ingest', None)
+[PASS] ev:3 matches the Section 3.8 table row: got ('ev:3', '18:54', 'agent', 'propose', 'ev:1'), appendix/run states ('ev:3', '18:54', 'agent', 'propose', 'ev:1')
+[PASS] ev:4 matches the Section 3.8 table row: got ('ev:4', '18:55', 'agent', 'propose', 'ev:2'), appendix/run states ('ev:4', '18:55', 'agent', 'propose', 'ev:2')
+[PASS] ev:5 matches the Section 3.8 table row: got ('ev:5', '18:56', 'agent', 'accept', 'ev:4'), appendix/run states ('ev:5', '18:56', 'agent', 'accept', 'ev:4')
+[PASS] ev:6 matches the Section 3.8 table row: got ('ev:6', '18:57', 'agent', 'challenge', 'ev:5'), appendix/run states ('ev:6', '18:57', 'agent', 'challenge', 'ev:5')
+[PASS] ev:7 matches the Section 3.8 table row: got ('ev:7', '18:57', 'agent', 'challenge', 'ev:5'), appendix/run states ('ev:7', '18:57', 'agent', 'challenge', 'ev:5')
+[PASS] ev:8 matches the Section 3.8 table row: got ('ev:8', '18:58', 'agent', 'annotate', 'ev:5'), appendix/run states ('ev:8', '18:58', 'agent', 'annotate', 'ev:5')
+[PASS] ev:9 matches the Section 3.8 table row: got ('ev:9', '19:00', 'agent', 'derive', 'ev:5'), appendix/run states ('ev:9', '19:00', 'agent', 'derive', 'ev:5')
+[PASS] ev:10 matches the Section 3.8 table row: got ('ev:10', '19:01', 'agent', 'align', 'ev:5'), appendix/run states ('ev:10', '19:01', 'agent', 'align', 'ev:5')
+[PASS] ev:11 matches the Section 3.8 table row: got ('ev:11', '19:02', 'agent', 'design', 'ev:7'), appendix/run states ('ev:11', '19:02', 'agent', 'design', 'ev:7')
+[PASS] ev:5 actor name: got 'demonstration operator (Claude), standing in for the human theorist', appendix/run states 'demonstration operator (Claude), standing in for the human theorist'
+[INFO] ev:5 actor kind is recorded as 'agent': no human passed the adoption gate (Section 3.0).
+[INFO] Timestamps are reconstructed after the runs, not written live (Section 3.8).
+[PASS] tamper test: editing ev:6 is detected at event index 5: got True, appendix/run states True
+RESULT: PASS

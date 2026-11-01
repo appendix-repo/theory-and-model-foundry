@@ -1,0 +1,22 @@
+== Check 02: schema validation of run outputs ==
+[PASS] Run 01 reading 1 (tce:reading-1): JSON Schema errors: got 0, appendix/run states 0
+[PASS] Run 02 reading 1 (rd:reading1): JSON Schema errors: got 0, appendix/run states 0
+[PASS] Run 01 ensemble (tce:ensemble-1): JSON Schema errors: got 0, appendix/run states 0
+[PASS] Run 02 ensemble (rd:ensemble): JSON Schema errors: got 0, appendix/run states 0
+[PASS] Run 07 AlignmentMap: JSON Schema errors: got 0, appendix/run states 0
+[INFO] Readings 2 and 3 of each theory are deltas against reading 1 and are saved to extracted/ without validation.
+[PASS] Run 07 AlignmentMap: number of links: got 7, appendix/run states 7
+[PASS] Ledger: events: got 11, appendix/run states 11
+[PASS] Ledger: events with schema errors: got 0, appendix/run states 0
+[PASS] tce ensemble: adoptedReading unset: got False, appendix/run states False
+[PASS] rd ensemble: adoptedReading unset: got False, appendix/run states False
+[PASS] tce:reading-1: violations of Section 4.1 prose rules: got 0, appendix/run states 0
+[PASS] tce:reading-1: derivations marked closed (no checker exists): got [], appendix/run states []
+[PASS] rd:reading1: violations of Section 4.1 prose rules: got 0, appendix/run states 0
+[PASS] rd:reading1: derivations marked closed (no checker exists): got [], appendix/run states []
+[INFO] P1 a construct with only a definition fails validation: schema ENFORCES this
+[INFO] P3 a 'closed' derivation without a checker fails validation: schema does NOT enforce this (checked in code by foundry.validate.prose_rule_violations)
+[INFO] P4 an assumption that is neither core nor auxiliary fails validation: schema ENFORCES this
+[INFO] P5 a construct without an @id fails validation: schema ENFORCES this
+[INFO] P2 (adoptedReading set only by a human LedgerEvent) is a rule about the Ledger and cannot be expressed in JSON Schema.
+RESULT: PASS

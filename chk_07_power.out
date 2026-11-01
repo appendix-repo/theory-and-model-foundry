@@ -1,0 +1,35 @@
+== Check 07: Run 08 power calculations ==
+[PASS] constant (z.975 + z.80)^2: got 7.849, appendix/run states 7.849
+[PASS] constant (z.95 + z.90)^2: got 8.564, appendix/run states 8.565
+D1 superiority n per arm (unrounded) = 587.92
+[PASS] D1: n per arm: got 588, appendix/run states 588
+[PASS] D1: design effect: got 1.4, appendix/run states 1.4
+[PASS] D1: n per arm after clustering: got 823, appendix/run states 823
+[PASS] D1: total firm x input pairs (about): got 1646, appendix/run states 1650
+D1 equivalence n per arm (unrounded) = 373.00
+[PASS] D1: equivalence n per arm: got 373, appendix/run states 373
+[PASS] D1: equivalence n after clustering: got 522, appendix/run states 522
+D2 n (unrounded) = 712.65; with VIF = 1018.08
+[PASS] D2: n: got 713, appendix/run states 713
+[PASS] D2: n with variance inflation: got 1018.0762103788583, appendix/run states 1018
+[PASS] D2: equivalence n: got 778, appendix/run states 778
+[PASS] D2: equivalence n with variance inflation: got 1110.8144795333803, appendix/run states 1111
+D3 (ln 0.8)^2 / 7.849 = 0.006344; E2 >= 354.7
+[PASS] D3: control events E2: got 355, appendix/run states 355
+[PASS] D3: treated events E1: got 284, appendix/run states 284
+[PASS] D3: pair-years per tercile: got 71000.0, appendix/run states 71000
+[PASS] D3: with overdispersion 1.5: got 106500.0, appendix/run states 106500
+[PASS] D3: available pair-years per tercile (stated as 53,300): got 53333.333333333336, appendix/run states 53300
+[PASS] D3: effective control events available: got 177.7777777777778, appendix/run states 177.7
+[PASS] D3: at RR 0.72, 7.849 x (1/(0.72 E2) + 1/E2) <= (ln 0.72)^2: got True, appendix/run states True
+D3 minimum detectable rate ratio (solved) = 0.723
+[PASS] D3: minimum detectable RR 'near 0.72': got 0.72, appendix/run states 0.72
+[PASS] D3: underpowered for RR 0.80 (available < required): got True, appendix/run states True
+D4/D6 n (unrounded) = 94.66
+[PASS] D4/D6: n: got 95, appendix/run states 95
+[PASS] D4/D6: n with variance inflation: got 135.71428571428572, appendix/run states 136
+[PASS] D5: adopters per half: got 190, appendix/run states 190
+[PASS] D5: total adopters with variance inflation: got 542.8571428571429, appendix/run states 543
+[PASS] D7: exits required: got 543, appendix/run states 543
+[INFO] Variance inflation used in Run 08: 1/(1-0.30) = 1.429. If 0.30 is rho rather than rho^2: 1.099.
+RESULT: PASS

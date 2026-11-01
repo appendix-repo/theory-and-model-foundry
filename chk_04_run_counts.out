@@ -1,0 +1,38 @@
+== Check 04: counts reported for Runs 01 to 08 ==
+[PASS] Run 01: constructs: got 19, appendix/run states 19
+[PASS] Run 01: every construct has all four inferential-role fields non-empty: got True, appendix/run states True
+[PASS] Run 01: assumptions: got 13, appendix/run states 13
+[PASS] Run 01: core / auxiliary: got (7, 6), appendix/run states (7, 6)
+[PASS] Run 01: propositions: got 7, appendix/run states 7
+[PASS] Run 01: P1 fact status: got 'accommodation', appendix/run states 'accommodation'
+[PASS] Run 01: P5, P6 fact status: got ('novel', 'novel'), appendix/run states ('novel', 'novel')
+[PASS] Run 01: readings in the ensemble: got 3, appendix/run states 3
+[PASS] Run 01: pivotal differences: got 4, appendix/run states 4
+[PASS] Run 01: tce:A13 is a surfaced auxiliary (Section 3.1, 3.7): got ('auxiliary', 'surfaced'), appendix/run states ('auxiliary', 'surfaced')
+[PASS] Run 02: constructs: got 19, appendix/run states 19
+[PASS] Run 02: assumptions: got 10, appendix/run states 10
+[PASS] Run 02: core assumptions: got 4, appendix/run states 4
+[PASS] Run 02: propositions: got 9, appendix/run states 9
+[PASS] Run 02: readings in the ensemble: got 3, appendix/run states 3
+[PASS] Run 03: objections: got 10, appendix/run states 10
+[PASS] Run 03: fatal / damaging / minor: got (1, 7, 2), appendix/run states (1, 7, 2)
+[PASS] Run 04: objections: got 9, appendix/run states 9
+[PASS] Run 04: fatal / damaging / minor: got (1, 6, 2), appendix/run states (1, 6, 2)
+[PASS] Run 05: derivation attempts: got 11, appendix/run states 11
+[PASS] Run 05: asserted / open / refuted: got (5, 5, 1), appendix/run states (5, 5, 1)
+[PASS] Run 05: closed: got 0, appendix/run states 0
+[PASS] Run 05: surfaced assumptions: got ['tce:A16', 'tce:A17', 'tce:A18', 'tce:A19', 'tce:A20', 'tce:A21'], appendix/run states ['tce:A16', 'tce:A17', 'tce:A18', 'tce:A19', 'tce:A20', 'tce:A21']
+[PASS] Run 06: Toulmin steps: got 11, appendix/run states 11
+[PASS] Run 06: steps with backing (Backing column other than None / Examples only): got 0, appendix/run states 0
+[PASS] Run 06: warrant gaps: got 11, appendix/run states 11
+[PASS] Run 06: inference-mode mismatches: got 5, appendix/run states 5
+[PASS] Run 06: defeaters (one per warrant): got 11, appendix/run states 11
+[PASS] Run 07: bridge / rivalry / complementarity / equivocation: got (1, 1, 3, 2), appendix/run states (1, 1, 3, 2)
+[PASS] Run 07: pairs with no alignment (Section 1 table, '**No alignment.**'): got 1, appendix/run states 1
+[PASS] Run 08: risky predictions: got 7, appendix/run states 7
+[PASS] Run 08: contrasts on which all theories agree: got 3, appendix/run states 3
+[PASS] Run 08: designs: got 7, appendix/run states 7
+[PASS] Run 08: severity ranking rows: got 7, appendix/run states 7
+[PASS] Run 08: top-ranked design: got 'D1', appendix/run states 'D1'
+[PASS] Run 08: lowest-ranked design: got 'D6', appendix/run states 'D6'
+RESULT: PASS
