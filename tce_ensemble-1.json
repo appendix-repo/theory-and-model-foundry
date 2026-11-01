@@ -1,0 +1,17 @@
+{
+ "@id": "tce:ensemble-1",
+ "@type": "FormalizationEnsemble",
+ "members": [
+  "tce:reading-1",
+  "tce:reading-2",
+  "tce:reading-3"
+ ],
+ "pivotalDifferences": [
+  "D1: mechanism producing alignment (s9 vs s10): teleological economizing choice (readings 1, 3) vs selection equilibrium (reading 2).",
+  "D2: role of uncertainty (s2 vs s11): moderator only (readings 1, 2) vs main effect plus moderator (reading 3).",
+  "D3: status of 'asset specificity is decisive' (s3): core (readings 1, 2) vs auxiliary (reading 3).",
+  "D4: referent of 'firm' (s1 vs s10): the hierarchy itself (readings 1, 3) vs the organization holding a portfolio of transactions, which is the unit of selection (reading 2)."
+ ],
+ "dispersion": 0.43,
+ "dispersionBasis": "Proposed metric, not a Foundry standard: the share of reading-1 propositions that are restated, replaced or removed in at least one other reading. P3 and P4 change in reading 2 (P3 restated as P3.r2; P4 sharpened by P9); P7 is replaced in reading 3. That is 3 of 7, about 0.43."
+}

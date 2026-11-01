@@ -1,0 +1,86 @@
+{
+ "@id": "rd:reading3",
+ "readingOf": "rd:ensemble",
+ "label": "Resource-dependence theory of organizational boundaries, Reading 3 (complementary reading)",
+ "stanceProfile": {
+  "justificationStrategies": [
+   "assimilative"
+  ],
+  "evidence": "B.8 'rather than' read as a contrast of emphasis: the account adds political management of dependence to, but does not replace, cost-based explanation."
+ },
+ "constructs": [
+  {
+   "@id": "rd:C4",
+   "inferentialRole": "replaced by the 'Reading 3' alternativeRole of rd:C4 in Reading 1",
+   "measurementCommitments": [
+    {
+     "indicator": "uncommitted (needs an indicator independent of rd:C1)",
+     "unitOfAnalysis": "directed dyad"
+    }
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "@id": "rd:R3",
+   "from": "rd:C1",
+   "to": "rd:C4",
+   "form": "causal",
+   "sign": "positive"
+  }
+ ],
+ "assumptions": [
+  {
+   "@id": "rd:A2",
+   "statement": "An organization's dependence on another actor is the principal source of that actor's power over it; power may also have other sources and need not be exercised.",
+   "status": "core",
+   "explicitness": "explicit"
+  },
+  {
+   "@id": "rd:A4",
+   "statement": "Political management of external dependencies is a major determinant of organizational boundaries, alongside cost considerations.",
+   "status": "auxiliary",
+   "explicitness": "explicit"
+  }
+ ],
+ "propositions": [
+  {
+   "@id": "rd:P2",
+   "statement": "The more A depends on B, the more power B has over A.",
+   "claimType": "prediction",
+   "factStatus": "undetermined"
+  },
+  {
+   "@id": "rd:P9",
+   "statement": "Holding cost-relevant transaction attributes constant, the dependence structure explains additional variation in organizational boundaries.",
+   "claimType": "prediction",
+   "factStatus": "undetermined",
+   "rivalDivergence": [
+    {
+     "rival": "tce:reading1",
+     "contrary": "Once asset specificity, uncertainty and frequency are controlled for, dependence adds no explanatory power (inferred rival position)."
+    }
+   ]
+  }
+ ],
+ "derivations": [
+  {
+   "@id": "rd:D1",
+   "target": "rd:P9",
+   "premises": [
+    "rd:A1",
+    "rd:A2",
+    "rd:A3",
+    "rd:A8",
+    "rd:A9"
+   ],
+   "method": "verbal",
+   "status": "asserted",
+   "auxiliariesRequired": [],
+   "notes": "The weaker, incremental P9 seems to follow from managerial action on dependence (A3, A8, A9) without A4 as a premise. Not checked."
+  }
+ ],
+ "openQuestions": [
+  "Reading 3: with power partly independent of dependence, what is the independent indicator of power (rd:C4)?"
+ ]
+}

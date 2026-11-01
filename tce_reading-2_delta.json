@@ -1,0 +1,140 @@
+{
+ "@id": "tce:reading-2",
+ "@type": "TheoryObject",
+ "readingOf": "tce:ensemble-1",
+ "label": "Transaction-cost theory of firm boundaries, reading 2 (selection equilibrium)",
+ "differsFrom": "tce:reading-1",
+ "replace": {
+  "stanceProfile.modelClasses": [
+   "causal",
+   "functional",
+   "dynamical"
+  ],
+  "stanceProfile.evidence (model classes)": "functional explanation backed by selection (s10), not teleological choice; dynamical because alignment is reached 'over time' (s10).",
+  "relations": [
+   {
+    "@id": "tce:R9.r2",
+    "from": "tce:C15",
+    "to": "tce:C9",
+    "form": "selection",
+    "sign": "conditional",
+    "moderators": [
+     "tce:C18"
+    ],
+    "scope": [
+     "tce:S2",
+     "tce:S3"
+    ]
+   }
+  ],
+  "mechanisms": [
+   {
+    "@id": "tce:M3.r2",
+    "label": "Discriminating alignment as a selection equilibrium: governance varies, misaligned firms bear higher cost and exit, survivors are aligned",
+    "steps": [
+     "tce:R4",
+     "tce:R6",
+     "tce:R7",
+     "tce:R11",
+     "tce:R12",
+     "tce:R9.r2"
+    ],
+    "mechanismType": "selection"
+   }
+  ],
+  "assumptions": [
+   {
+    "@id": "tce:A4.r2",
+    "statement": "Economizing is a property of the surviving population: governance structures that are more costly for a transaction do not persist in competitive populations (s1, s10).",
+    "status": "core",
+    "explicitness": "implicit"
+   },
+   {
+    "@id": "tce:A12.r2",
+    "statement": "Competitive selection is strong and fast enough to eliminate firms that misalign (s10).",
+    "status": "core",
+    "explicitness": "explicit",
+    "supports": [
+     "tce:R9.r2",
+     "tce:M3.r2",
+     "tce:P3.r2",
+     "tce:P4"
+    ]
+   },
+   {
+    "@id": "tce:A14",
+    "statement": "Governance arrangements vary across firms, for example through trial, imitation or error, so that selection has variation to act on (surfaced).",
+    "status": "auxiliary",
+    "explicitness": "surfaced",
+    "surfacedBy": "Explicator (Role 1), run 01"
+   }
+  ],
+  "propositions": [
+   {
+    "@id": "tce:P3.r2",
+    "statement": "In competitive populations that have had time to be selected, the distribution of governance across transactions approximates discriminating alignment: low asset specificity with market, intermediate with hybrid, high with hierarchy. Individual transactions may be misaligned.",
+    "claimType": "prediction",
+    "factStatus": "undetermined",
+    "observables": [
+     "share of aligned transactions by industry",
+     "industry age",
+     "competitive intensity"
+    ]
+   }
+  ],
+  "constructs (inferentialRole switches to alternativeRoles 'reading-2')": [
+   "tce:C17"
+  ],
+  "tce:C15.inferentialRole.commitments": [
+   {
+    "@id": "tce:C15.r2.com1",
+    "statement": "If structure g has the lowest governance cost for transaction t, then firms governing t by structures other than g have a lower expected survival (s10).",
+    "strength": "defeasible"
+   }
+  ]
+ },
+ "add": {
+  "propositions": [
+   {
+    "@id": "tce:P8",
+    "statement": "The prevalence of misaligned transactions decreases with competitive intensity and with the time a population has been exposed to competition (surfaced from s10 under reading 2).",
+    "claimType": "prediction",
+    "factStatus": "novel",
+    "observables": [
+     "misalignment share",
+     "competitive intensity (e.g. concentration, import penetration)",
+     "industry or firm age"
+    ]
+   },
+   {
+    "@id": "tce:P9",
+    "statement": "Among firms of the same age in the same market, misaligned firms have a higher exit hazard than aligned ones (sharpening of P4 under reading 2).",
+    "claimType": "prediction",
+    "factStatus": "undetermined",
+    "observables": [
+     "firm exit",
+     "alignment status of the firm's main transactions"
+    ]
+   }
+  ],
+  "scopeConditions": [
+   {
+    "@id": "tce:S2.r2",
+    "statement": "P3 itself (not only P4) holds only in competitive populations observed after selection has had time to act.",
+    "explicitness": "surfaced"
+   }
+  ]
+ },
+ "remove": [
+  "tce:A4",
+  "tce:A12",
+  "tce:A13",
+  "tce:R9",
+  "tce:M3",
+  "tce:P3"
+ ],
+ "openQuestions (added)": [
+  "Under reading 2, P3 does not hold in protected, regulated or young industries. Does the theorist accept that restriction of scope?",
+  "Selection acts on firms but alignment is defined per transaction (C16 vs C17.r2). How much misalignment can a firm with many aligned transactions carry before selection bites?"
+ ]
+}

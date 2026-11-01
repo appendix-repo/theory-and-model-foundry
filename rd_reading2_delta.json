@@ -1,0 +1,75 @@
+{
+ "@id": "rd:reading2",
+ "readingOf": "rd:ensemble",
+ "label": "Resource-dependence theory of organizational boundaries, Reading 2 (constraint-as-imbalance reading)",
+ "constructs": [
+  {
+   "@id": "rd:C5",
+   "definition": "The partner's power advantage over the focal organization: power imbalance in B's favor (B.6 read with B.7).",
+   "inferentialRole": "replaced by the 'Reading 2' alternativeRole of rd:C5 in Reading 1"
+  }
+ ],
+ "relations": [
+  {
+   "@id": "rd:R9",
+   "from": "rd:C5",
+   "to": "rd:C12",
+   "form": "causal",
+   "sign": "conditional",
+   "moderators": [
+    "rd:C6"
+   ],
+   "scope": [
+    "rd:S4"
+   ]
+  },
+  {
+   "@id": "rd:R19",
+   "from": "rd:C5",
+   "to": "rd:C16",
+   "form": "causal",
+   "sign": "positive"
+  }
+ ],
+ "assumptions": [
+  {
+   "@id": "rd:A10",
+   "removed": true
+  }
+ ],
+ "propositions": [
+  {
+   "@id": "rd:P4",
+   "statement": "Constraint (imbalance in B's favor) raises the probability that A and B merge only where their mutual dependence is high; where mutual dependence is low, constraint has no positive effect on merger.",
+   "claimType": "prediction",
+   "factStatus": "undetermined"
+  },
+  {
+   "@id": "rd:P6",
+   "statement": "Power imbalance raises the weaker side's motivation to absorb the stronger and lowers its ability to. Its net effect on absorption is conditional on mutual dependence, and the text does not fix its sign.",
+   "claimType": "prediction",
+   "factStatus": "undetermined"
+  },
+  {
+   "@id": "rd:P10",
+   "statement": "[Surfaced, not in text] Where A faces high constraint from B and mutual dependence is low, A turns to co-optation, negotiated arrangements or diversification rather than absorption.",
+   "claimType": "prediction",
+   "factStatus": "undetermined"
+  }
+ ],
+ "derivations": [
+  {
+   "@id": "rd:D2",
+   "target": "rd:P4",
+   "premises": [
+    "rd:A2",
+    "rd:A6",
+    "rd:A7"
+   ],
+   "method": "verbal",
+   "status": "asserted",
+   "auxiliariesRequired": [],
+   "notes": "P4 in this reading seems to follow from A6 and A7 once the interaction is written in. A10 is not needed. P10 is needed for B.6's 'which tactic is chosen' to say anything about tactics other than merger."
+  }
+ ]
+}

@@ -1,0 +1,90 @@
+{
+ "@id": "align:tce-rd-run07",
+ "@type": "AlignmentMap",
+ "theories": [
+  "tce:reading-1",
+  "rd:reading1"
+ ],
+ "links": [
+  {
+   "kind": "bridge",
+   "constructs": [
+    "tce:C2",
+    "rd:C1",
+    "rd:C2",
+    "rd:C3"
+   ],
+   "sharedLicenses": [
+    "If X(A,B) rises, B's ex post leverage over A rises (tce:C2.com2, tce:C6.lic1; rd:C1.l1 with rd:C4.c1)",
+    "If X(A,B) rises, P(A and B under common ownership) rises (tce:C2.lic1, tce:P5; rd:C5.l1, rd:P4)",
+    "If the A-B asset or resource is as good elsewhere, X is absent (tce:C2.pre1; rd:C1.p1)"
+   ],
+   "basis": "Scope-restricted, one-directional bridge over dyads whose dependence arises from A's sunk relationship-specific investment (tce:S1 intersect rd:S2). tce:C2 entitles rd:C1 via rd:C1.e1 (inferred); the converse fails (generic input from a monopolist: high rd:C1, zero tce:C2, tce:C8.pre1). Substitution test: T1 tce:P5 -> PASS conditional on rd:A10 and common-ownership coding; T2 tce:P2 -> PASS conditional on rd:C4.c1 (Explicator inference). Reverse robustness: T3 rd:P1 -> FAIL; T4 rd:P5 -> weak PASS."
+  },
+  {
+   "kind": "rivalry",
+   "constructs": [
+    "tce:C15",
+    "rd:C8",
+    "rd:C18"
+   ],
+   "conflictingEntitlements": [
+    "tce:C15.com1 with core tce:A4: the lowest-governance-cost structure is the one adopted",
+    "rd:C18.p1 with core rd:A4: boundaries are not set by cost minimization",
+    "tce:C12.pre1 excludes hierarchy at low specificity; rd:P5 / rd:C6.l1 license absorption under high mutual dependence with no specificity condition"
+   ],
+   "basis": "Hard-core versus hard-core conflict over the boundary criterion. Divergent observable: incidence of common ownership in dyads with high mutual dependence and low asset specificity (critical generic input, few suppliers, no specific investment). TCE: market governance; any integration is misaligned and bears a cost/survival penalty (tce:P3, tce:P4). RD: elevated merger incidence with no penalty predicted (rd:P5, rd:P7). Requires a dependence indicator independent of specificity.",
+   "operator": "Integrate",
+   "inferentialPrice": "I2 (two-criterion dyadic boundary choice). TCE: tce:A4 ceases to be the sole positive heuristic; the transaction (tce:A3) ceases to be the sole unit. RD: rd:A4 must move from hard core to belt (RD reading 3); must accept that absorption is costly (tce:A7). Both: a weighting parameter and a specificity-independent dependence indicator. PrisM: the effect of non-specificity dependence on integration rises as competitive selection weakens."
+  },
+  {
+   "kind": "complementarity",
+   "constructs": [
+    "tce:C6",
+    "tce:C7",
+    "rd:C4"
+   ],
+   "discharges": "RD leaves open what power does and when it is exercised (rd:C4.c1 is an inference; reading 3: power need not be exercised). TCE's tce:A2 with tce:C7 discharges it: leverage is exercised where contracts are incomplete and the advantaged party is opportunistic.",
+   "basis": "Not a bridge: substituting power for opportunism in tce:A2 ('because some parties have power, gaps will be exploited') is not licensed by RD reading 1, and under high mutual dependence RD licenses cooperative absorption (rd:A6), not exploitation. Disposition (TCE) and structural capacity (RD) compose rather than substitute."
+  },
+  {
+   "kind": "equivocation",
+   "constructs": [
+    "tce:C3",
+    "rd:C9"
+   ],
+   "basis": "Same word, different roles. tce:C3: exogenous transaction attribute, acts through incompleteness (tce:A11), precludes an integration effect at near-zero specificity (tce:C3.pre1, tce:P7). rd:C9: endogenous to dependence (rd:R5), organization-level, licenses a direct motive for tactics (rd:C9.l1). Substituting rd:C9 into tce:P7 yields a claim RD contradicts."
+  },
+  {
+   "kind": "equivocation",
+   "constructs": [
+    "tce:C12",
+    "tce:C19",
+    "rd:C12"
+   ],
+   "basis": "Same observable (a common-ownership event), different roles. tce:C12 requires authority and administrative control (pre2), carries bureaucratic cost and weaker incentives (com2), is precluded at low specificity (pre1). rd:C12 is a cost-free event licensed by mutual dependence and includes horizontal mergers. Substitution: tce:C12.com1 partial pass (rd:C12.l1; 'fiat' unmatched); tce:C12.com2 FAIL (RD silent); tce:C12.pre1 FAIL (rd:P5 contrary). Do not count one M&A event as evidence for both theories."
+  },
+  {
+   "kind": "complementarity",
+   "constructs": [
+    "rd:C7",
+    "rd:C17",
+    "tce:C9"
+   ],
+   "discharges": "TCE's surfaced scope condition tce:S3 (all governance structures feasible for every transaction) is discharged by rd:R13 / rd:C17.l1 (the weaker side is less able to absorb; infeasible absorption is unlikely whatever the motive) and rd:C16.p1 (no motive to absorb without dependence).",
+   "basis": "TCE assumes what RD models; feasibility becomes a variable instead of a scope condition.",
+   "operator": "Augment",
+   "inferentialPrice": "I1 (feasibility-constrained alignment), TCE host. TCE: drops tce:S3 and must accept persistent non-integration of high-specificity dyads as predicted rather than anomalous; needs an imbalance measure independent of specificity. RD: its constructs enter as auxiliaries of a cost-minimizing core, incompatible with rd:A4 as core in reading 1. PrisM: the slope of P(integration) on the investor's asset specificity is flatter when the investor is the weaker side of a power imbalance."
+  },
+  {
+   "kind": "complementarity",
+   "constructs": [
+    "tce:C11",
+    "rd:C13",
+    "rd:C14"
+   ],
+   "discharges": "RD leaves open when co-optation or negotiated long-term arrangements are chosen over absorption (Run 02 openQuestion 5). TCE's tce:C11.lic1 (hybrids at intermediate specificity), read through the L1 bridge, discharges it for dependence that arises from specific investment.",
+   "basis": "Conditional on the L1 bridge and on surfaced auxiliary tce:A8. Leaves diversification (rd:C15) without a counterpart, and does not cover dependence outside L1's scope."
+  }
+ ]
+}

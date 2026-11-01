@@ -1,0 +1,68 @@
+{
+ "@id": "tce:reading-3",
+ "@type": "TheoryObject",
+ "readingOf": "tce:ensemble-1",
+ "label": "Transaction-cost theory of firm boundaries, reading 3 (independent dimensions)",
+ "differsFrom": "tce:reading-1",
+ "replace": {
+  "assumptions": [
+   {
+    "@id": "tce:A5.r3",
+    "statement": "Asset specificity is the empirically most important of the three dimensions (s3), a weighting claim revisable in the light of evidence.",
+    "status": "auxiliary",
+    "explicitness": "explicit"
+   }
+  ],
+  "constructs (inferentialRole switches to alternativeRoles 'reading-3')": [
+   "tce:C3"
+  ],
+  "propositions": [
+   {
+    "@id": "tce:P7.r3",
+    "statement": "Holding asset specificity constant, including near zero, higher uncertainty raises the probability of vertical integration; the effect of asset specificity is also steeper when uncertainty is high.",
+    "claimType": "prediction",
+    "factStatus": "undetermined",
+    "observables": [
+     "make-or-buy outcome",
+     "uncertainty main effect",
+     "asset specificity x uncertainty interaction"
+    ]
+   }
+  ]
+ },
+ "add": {
+  "relations": [
+   {
+    "@id": "tce:R14",
+    "from": "tce:C3",
+    "to": "tce:C19",
+    "form": "causal",
+    "sign": "positive"
+   },
+   {
+    "@id": "tce:R15",
+    "from": "tce:C3",
+    "to": "tce:C15",
+    "form": "causal",
+    "sign": "positive",
+    "moderators": [
+     "tce:C10"
+    ]
+   }
+  ],
+  "assumptions": [
+   {
+    "@id": "tce:A15",
+    "statement": "Uncertainty raises the cost of market governance through adaptation needs even when no specific assets are at stake (surfaced; needed for R15).",
+    "status": "auxiliary",
+    "explicitness": "surfaced",
+    "surfacedBy": "Explicator (Role 1), run 01"
+   }
+  ]
+ },
+ "remove": [
+  "tce:A5",
+  "tce:P7"
+ ],
+ "note": "Frequency (tce:C4) still enters no relation in this reading. The text gives no basis for one, and I did not invent one (see Q5)."
+}
